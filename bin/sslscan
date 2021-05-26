@@ -86,3 +86,5 @@ Signal.trap("INT") do
     Process.kill("TERM", pid)
     exit 0
 end
+
+Process.waitpid(pid, 0)
