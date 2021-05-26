@@ -44,3 +44,16 @@ module ScanSSL
             puts "port: #{@port}"
             puts "--------------------"
             puts "valid: #{cValid}"
+            puts "valid from: #{cFrom}"
+            puts "valid until: #{cUntil}"
+            puts "issuer: #{cIssuer}"
+            puts "subject: #{cSubject}"
+            puts "algorithm: #{cAlgorithm}"
+            puts "key size: #{cKey}"
+            puts "public key: "
+            puts "#{public_key}"    
+        end
+    end
+end
+
+        
