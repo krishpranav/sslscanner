@@ -25,4 +25,8 @@ begin
         opts.on('-s', '--server server', 'Server to scan') do |server|
             options[:server] = server
         end
+
+        opts.on('-p', '--port port', 'Port to scan') do |port|
+            options[:port] = port
+        end
         
