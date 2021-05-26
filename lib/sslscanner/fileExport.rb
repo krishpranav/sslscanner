@@ -11,4 +11,8 @@ module ScanSSL
             ftxt.write(data)
             ftxt.close
         end
-        
+
+        def self.csv(file, data)
+        end
+    end
+end
