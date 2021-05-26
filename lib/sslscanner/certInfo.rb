@@ -50,6 +50,10 @@ module ScanSSL
         rescue 
             return "Problem with keysize"
         end
+
+        def public_key
+            return cert.public_key
+        end
         
 
                 
