@@ -38,3 +38,9 @@ module ScanSSL
             end
         end
 
+        def self.colorOutputCert(cValid, cFrom, cUntil, cIssuer, cSubject, cAlgorithm, cKey, cPublic)
+            puts "===== CERTIFICATE INFORMATION ====".bold
+            puts "domain: #{@server}"
+            puts "port: #{@port}"
+            puts "--------------------"
+            puts "valid: #{cValid}"
