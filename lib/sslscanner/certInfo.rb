@@ -25,5 +25,14 @@ module ScanSSL
         def issuer
             return certprops.select { |name, data, type| name == "0"}.first[1]
         end
+
+        def subject
+            return cert.subject
+        end
+
+        def algorithm
+            return cert.algorithm
+        end
         
+
         
