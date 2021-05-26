@@ -56,4 +56,12 @@ begin
           puts opts
           exit
         end
-      end.parse!
+    end.parse!
+
+rescue OptionParser::MissingArgument
+    puts "Wrong argument. Check: -h for more help"
+    
+rescue OptionParser::InvalidOptions
+    puts "Ivalid argument. Check: -h for more help."
+end
+
