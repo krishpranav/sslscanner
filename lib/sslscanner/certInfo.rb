@@ -9,3 +9,8 @@ module ScanSSL
             @socket_destination = OpenSSL::SSL::SSLSocket.new @tcp_socket, @ssl_context
             @socket_destination.connect
         end
+
+        def valid?
+            return TRUTH_TABLE[(@socket_destination.verify_result == 0)]
+        end
+        
