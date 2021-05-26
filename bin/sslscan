@@ -67,6 +67,12 @@ end
 
 unless options[:server]
     puts "Missing -s/--server argument!"
-    puts "Try -h"
+    puts "Try -h for more help"
+    exit 
+end
+
+unless options[:port]
+    puts "Missing -p/--port arguemtns!!"
+    puts "Try -h for more help"
     exit 
 end
