@@ -21,5 +21,9 @@ module ScanSSL
         def valid_until
             return cert.not_after
         end
+
+        def issuer
+            return certprops.select { |name, data, type| name == "0"}.first[1]
+        end
         
         
