@@ -65,3 +65,8 @@ rescue OptionParser::InvalidOptions
     puts "Ivalid argument. Check: -h for more help."
 end
 
+unless options[:server]
+    puts "Missing -s/--server argument!"
+    puts "Try -h"
+    exit 
+end
