@@ -32,4 +32,9 @@ module ScanSSL
                     a.public_key)
                 end
 
-                
+            if options[:check_cert] == nil
+                run = ScanSSL::ScanHost.new
+                puts run.scan(@server, @port)
+            end
+        end
+
