@@ -54,6 +54,10 @@ module ScanSSL
         def public_key
             return cert.public_key
         end
+
+        def cert
+            return OpenSSL::X509::Certificate.new(@socket_destination.peer_cert)
+        end
         
 
                 
