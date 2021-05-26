@@ -11,3 +11,18 @@ unless File.respond_to? :realpath
     end
 end
 $: << File.expand_path(File.dirname(File.realpath(__FILE__)) + "/../lib")
+
+# requires
+require 'sslscanner'
+require 'rubygames'
+
+options = {}
+
+begin
+    OptionParser.new do |opts|
+        opts.banner = "Usage: #{File.basename($0)} [options]"
+
+        opts.on('-s', '--server server', 'Server to scan') do |server|
+            options[:server] = server
+        end
+        
