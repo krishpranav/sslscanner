@@ -14,3 +14,7 @@ module ScanSSL
             return TRUTH_TABLE[(@socket_destination.verify_result == 0)]
         end
         
+        def valid_from
+            return cert.not_before
+        end
+        
