@@ -58,6 +58,12 @@ module ScanSSL
         def cert
             return OpenSSL::X509::Certificate.new(@socket_destination.peer_cert)
         end
-        
+
+        def certprops
+            return OpenSSL::X509::Name.new(cert.issuer).to_a
+        end
+    end
+end
+
 
                 
