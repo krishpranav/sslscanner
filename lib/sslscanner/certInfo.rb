@@ -31,8 +31,25 @@ module ScanSSL
         end
 
         def algorithm
-            return cert.algorithm
+            return cert.signature_algorithm
+        end
+
+
+        def key_size
+            begin
+                key_size = OpenSSL::PKey::RSA.new(cert.public_key).to_text.match(/Public-Key: \((.*) bit/).to_a[1].strip.to_i
+                if key_size.between?(1000, 2000)
+                    key_size = $1
+                elsif key_size > 2000
+                    key_size = $1
+                else
+                    key_size = $1
+                end
+                return key_size 
+            end
+        rescue 
+            return "Problem with keysize"
         end
         
 
-        
+                
