@@ -17,4 +17,9 @@ module ScanSSL
         def valid_from
             return cert.not_before
         end
+
+        def valid_until
+            return cert.not_after
+        end
+        
         
