@@ -80,3 +80,9 @@ end
 pid = fork do
     ScanSSL::Command.call(options)
 end
+
+Signal.trap("INT") do
+    puts "Terminating Scan...."
+    Process.kill("TERM", pid)
+    exit 0
+end
