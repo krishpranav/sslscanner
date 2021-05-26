@@ -76,3 +76,7 @@ unless options[:port]
     puts "Try -h for more help"
     exit 
 end
+
+pid = fork do
+    ScanSSL::Command.call(options)
+end
